@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Page from '../components/container';
 import React, {useState} from 'react';
+import { render } from 'react-dom';
 
 export default function Home() {
   const [contactValue, setContactValue] = useState(0);
@@ -34,11 +35,8 @@ export default function Home() {
               </div>
 
               <div>
-
-
+                {renderElements(contactValue)}
               </div>
-
-              <p>{contactValue}</p>
             </div>
           </main>
         </Page>
@@ -71,4 +69,36 @@ export default function Home() {
 
     
   );
+}
+
+function Precontact() {
+  return (
+    <p>First contact</p>
+  );
+}
+
+function Initialcontact() {
+  return (
+    <p>Initial contact</p>
+  );
+}
+
+function Postcontact() {
+  return (
+    <p>Post contact</p>
+  );
+}
+
+function renderElements(contactValue) {
+  if (contactValue === 'Pre-contact') {
+    return <Precontact></Precontact>;
+  } else if (contactValue === 'Initial-contact') {
+    return <Initialcontact></Initialcontact>
+  } else if (contactValue === 'Post-contact') {
+    return <Postcontact></Postcontact>;
+  } else if (contactValue === 0) {
+    return <h3>Click a button to get started!</h3>;
+  } else {
+    return <p>Error!</p>
+  }
 }
