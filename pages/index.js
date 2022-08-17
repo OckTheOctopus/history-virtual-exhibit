@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Page from '../components/container';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { render } from 'react-dom';
 import Nagarakertagama from '../public/images/Nagarakertagama.jpg';
 import Coin from '../public/images/coin.webp';
@@ -12,10 +12,15 @@ import Precontact1 from '../public/images/precontact1.jpg';
 
 export default function Home() {
   const [contactValue, setContactValue] = useState(0);
+  const [opaque, setOpaque] = useState(false);
+
+  useEffect(() => {
+    setOpaque(true);
+  })
 
   return (
     <>
-      <div>
+      <div className={handleFadeIn(opaque)}>
         <Head>
           <title>East Meets West</title>
         </Head>
@@ -24,16 +29,17 @@ export default function Home() {
             <div className='intro'>
               <p>The first contact between the nations of Asia and Europe were normally to establish trade. Such relationships were mutually beneficial and normally ended with both nations prospering and becoming more powerful. As the Europeans began to grow in power and advance technologically, the encounters with the nations of Asia became less than friendly, with conquest as the aim as opposed to trade.</p>
               <p>One particular set of interactions were between the Dutch and the Indonesians. While they were not the first Europeans on the islands, they would become the most influential, and would eventually rule one of the most prized European colonies and have a near monopoly on the spice trade.</p>
-              
+              <br/>
+              <br/>
               <div className='button-container'>
                 <button onClick={() => setContactValue('Pre-contact')}>
-                  Pre-contact
+                  <strong>Pre-contact</strong>
                 </button>
                 <button onClick={() => setContactValue('Initial-contact')}>
-                  Initial contact
+                  <strong>Initial contact</strong>
                 </button>
                 <button onClick={() => setContactValue('Post-contact')}>
-                  Post-contact
+                  <strong>Post-contact</strong>
                 </button>
               </div>
 
@@ -46,6 +52,26 @@ export default function Home() {
       </div>
 
       <style jsx>{`
+        .outerapp {
+          opacity: 0;
+        }
+
+        .opaque {
+          opacity: 1;
+          animation-duration: 2s;
+          animation-name: animateOpacity;
+        }
+
+        @keyframes animateOpacity {
+          from {
+            opacity: 0;
+          }
+
+          to {
+            opacity: 1;
+          }
+        }
+
         .intro {
           text-align: center;
         }
@@ -56,16 +82,21 @@ export default function Home() {
         }
 
         button {
+          font-size: 20px;
           width: 30%;
           height: 10vh;
-          border-radius: 25%
+          border-radius: 5px;
           margin-right: 1%;
           margin-left: 1%;
-          transition: 350ms linear all 350ms;
+          transition: 0.35s linear all 0.35s;
+          color: #151515;
+          background-color: #fafdec;
+          border-color: #fafdec
         }
 
         button:hover {
-          background-color: grey;
+          width: 33%;
+          height: 11vh;
         }
     `}</style>
     </>
@@ -125,11 +156,11 @@ function Postcontact() {
 
       <h2>Picture of Batavia (now Jakarta)</h2>
       <Image src={Map} alt='' height='300px' width='600px'></Image>
-      <p className='description'>This is a Dutch picture of Batavia (now Jakarta). Batavia was the colonial capital of the VoC, and was their main base of operations on the islands. In the picture, many ships can be seen entering the various ports and canals of the city. The powers of Europe left behind paper trails for them to follow and hold things to account, and this is one example of this. The picture was likely made for encyclopaedias, map pictures, books, messages, and the like. A map of a city is not one that many people would try to forge, as errors in the map could have consequences for the parties involved. The picture is likely an accurate depiction of the city of Batavia, and shows us an overview of the layout of the city and how it was organised, as well as how the landscape was transformed around the city. The large number of ships in the harbour indicates that Batavia was a city that focused on trade, if not outright relied on it completely.</p>
+      <p className='description'>This is a Dutch picture of Batavia (now Jakarta). Batavia was the colonial capital of the VoC, and was their main base of operations on the islands. In the picture, many ships can be seen entering the various ports and canals of the city. The powers of Europe left behind paper trails for them to follow and hold things to account, and this is one example of this. The picture was likely made for encyclopaedias, map pictures, books, messages, and the like. A map of a city is not one that many people would try to forge, as errors in the map could have consequences for the parties involved. The picture is likely an accurate depiction of the city of Batavia, and shows us an overview of the layout of the city and how it was organised, as well as how the landscape was transformed around the city. The large number of ships in the harbour indicates that Batavia was a city that focused on trade, if not outright relied on it completely. As you can see in the image, the city looks very European, meaning that the original city was likely destroyed and the natives displaced (the Dutch had to fight many kingdoms to gain control of Java). While this wouldn't have been a problem for the Dutch, it did mean that the Indonesians lost their independence and sometimes their lives.</p>
       
       <h2>The VoC Duit</h2>
       <Image src={Coin} alt='' height='300px' width='600px'></Image>
-      <p className='description'>This is a VoC Duit. This was one of the coins minted by the VoC for its use in its trading posts (later restricted to just Indonesia). 20 Duits would make one Guilder. While the coin doesn&#39;t tell us much, it symbolises the strength of the VoC. It would be unimaginable to us today if a company went to war with a sovereign state, yet the VoC - being a company in which you could trade on the Dutch exchange - essentially acted like a country and had powers that would be unthinkable to give to a company today. The VoC not only had a total monopoly granted to them on the spice trade; but they could wage wars, field and pay for their own armies, put their own currency into circulation, and execute their prisoners condemned under their own judicial system. It was also this immense power that led to corruption and bankruptcy, which would lead to the eventual collapse of the company and Indonesia being ruled outright by the Dutch State. The source is quite simple, and while it doesn&#39;t offer much as to how the company was run or what was purchased, it stills tells us much about the sheer strength and power of a single company, and the powers entrusted to it by the state.</p>
+      <p className='description'>This is a VoC Duit. This was one of the coins minted by the VoC for its use in its trading posts (later restricted to just Indonesia). 20 Duits would make one Guilder. While the coin doesn&#39;t tell us much, it symbolises the strength of the VoC. It would be unimaginable to us today if a company went to war with a sovereign state, yet the VoC - being a company in which you could trade on the Dutch exchange - essentially acted like a country and had powers that would be unthinkable to give to a company today. The VoC not only had a total monopoly granted to them on the spice trade; but they could wage wars, field and pay for their own armies, put their own currency into circulation, and execute their prisoners condemned under their own judicial system. It was also this immense power that led to corruption and bankruptcy, which would lead to the eventual collapse of the company and Indonesia being ruled outright by the Dutch State. The source is quite simple, and while it doesn&#39;t offer much as to how the company was run or what was purchased, it stills tells us much about the sheer strength and power of a single company, and the powers entrusted to it by the state. What the coin does not show, however, is the degree of the exploitation of the Indonesians by the Dutch, although it can be assumed that the VoC had the power to do so - and by looking at what other colonial empires did to the surrounding lands, they likely did so. This would have benefitted the VoC with cheap labour, but come at the cost of wreaking havoc on Indonesian society.</p>
 
       <style jsx>{`
         .description {
@@ -151,5 +182,13 @@ function renderElements(contactValue) {
     return <h3>Click a button to get started!</h3>;
   } else {
     return <p>Error!</p>
+  }
+}
+
+function handleFadeIn(isOpaque) {
+  if (isOpaque) {
+    return 'opaque';
+  } else {
+    return 'outerapp';
   }
 }

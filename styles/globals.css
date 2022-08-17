@@ -9,6 +9,19 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  transition: .35s linear all .35s;
+}
+
+a:hover {
+  color: silver;
+}
+
+h1 {
+  color: inherit;
+}
+
+a:hover {
+  color: silver;
 }
 
 * {
@@ -21,6 +34,6 @@ a {
   }
   body {
     color: white;
-    background: black;
+    background: #151515;
   }
 }

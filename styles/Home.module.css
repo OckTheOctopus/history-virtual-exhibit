@@ -32,7 +32,7 @@
 
 .footer a {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-grow: 1;
 }
@@ -124,15 +124,14 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
-  }
-  .code {
-    background: #111;
-  }
-  .logo img {
-    filter: invert(1);
-  }
+.card,
+.footer {
+  border-color: #222;
 }
+.code {
+  background: #111;
+}
+.logo img {
+  filter: invert(1);
+}
+

@@ -5,12 +5,13 @@ export default function Footer() {
     return (
         <>
             <div className={styles.footer}>
-                <p>Yaseen Ahmed, 2022</p>
+                <p className='fixme'>Yaseen Ahmed, 2022</p>
+
                 <Link href='/bibliography'>
-                    <a>Bibliography</a>
+                    <p className='fixme'><a>Bibliography</a></p>
                 </Link>
-                <Link href='/'>
-                    <a>Source</a>
+                <Link href='https://github.com/OckTheOctopus/history-virtual-exhibit'>
+                    <p className='fixme'><a>Source</a></p>
                 </Link>
             </div>
            
@@ -19,6 +20,10 @@ export default function Footer() {
                 p {
                     margin: 3vh;
                     text-align: center;
+                }
+                .fixme {
+                    display: flex;
+                    justify-content: space-around;
                 }
             `}</style>
         </>
