@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css';
 import Page from '../components/container';
 import React, {useState} from 'react';
 import { render } from 'react-dom';
+import Test from '../public/images/Nagarakertagama.jpg';
 
 export default function Home() {
   const [contactValue, setContactValue] = useState(0);
@@ -82,7 +83,7 @@ function Precontact() {
         <br/>
         <br/>
         <h2>The Nagarakretagama</h2>
-        <Image src='/../public/images/Nagarakertagama.jpg' alt='' height='300px' width='600px'></Image>
+        <Image src={Test} alt='' height='300px' width='600px'></Image>
         <p className='description'>This is the Nagarakretagama. It is an Indonesian epic poem describing the Majapahit Empire at its height. It describes the lands of the empire, its capital city, its customs, its religious festivals, and more. It is one of the most valuable primary sources on the history of Indonesia known, particularly due to its vivid descriptions of the culture and the Hindu celebrations.<br/>The poem was written during the height of the Majapahit Empire, when it stretched from Java to the Philippines, an epic poem about an empire written in its own language attests to its strength and prestige, and indicates that the people view the empire as a major power in the region. This fact is proved further by the descriptions of the army, expansions, and castle guards in the poem. It is quite a useful source for historians, mainly due to the amount of detail used to describe religious ceremonies and practices, while also providing insight into the function of the empire as a whole. It may not be the most reliable source, as we are unsure as to who wrote it, why it was written, and what ties the author had. It is quite likely that the author or authors made the empire seem more grand than it was. </p>
       <style jsx>{`
         .description {
