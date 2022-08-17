@@ -24,13 +24,3 @@ a {
     background: black;
   }
 }
-
-@media (prefers-color-scheme: light) {
-  html {
-    color-scheme: light;
-  }
-  body {
-    color: black;
-    background: white;
-  }
-}
