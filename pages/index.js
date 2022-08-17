@@ -4,7 +4,11 @@ import styles from '../styles/Home.module.css';
 import Page from '../components/container';
 import React, {useState} from 'react';
 import { render } from 'react-dom';
-import Test from '../public/images/Nagarakertagama.jpg';
+import Nagarakertagama from '../public/images/Nagarakertagama.jpg';
+import Coin from '../public/images/coin.wedbp';
+import Fleet from '../public/images/fleet.png';
+import Map from '../public/images/map.jpg';
+import Precontact1 from '../public/images/precontact1.jpg';
 
 export default function Home() {
   const [contactValue, setContactValue] = useState(0);
@@ -77,13 +81,13 @@ function Precontact() {
         <br/>
         <br/>
         <h2>Penataran Temple</h2>
-        <Image src='/../public/images/precontact1.jpg' alt='' height='300px' width='600px'></Image>
+        <Image src={Precontact1} alt='' height='300px' width='600px'></Image>
         <p className='description'>This is the Pentaran Temple. It is one of the largest Hindu temples on the island of Java. It was built during the time of the Kediri Kingdom, and was an important government building during the time of the Majapahit Kingdom.<br/>Temples are built not only for worship. Temples are a way to display the strength of a ruler - especially if the temples are large. Hinduism was a huge part of Indonesia&#39;s history, with their proximity to India and their historically strong trading relations being the main factors for the spread of the religion to the islands. The fact that the temple was built and is still standing indicates that the Kediri Kingdom had sufficient power and resources to afford to build it, the inhabitants of the area valued it deeply, and that the area was stable enough to have it stay up. It also indicates that the rulers and inhabitants alike of the island cared very much about religion - even in times of crisis and war, the temple was left intact and was preserved to this day.<br/>This is, overall, a reliable source. The temple offers a glimpse into the island&#39;s past and it does not pick a side in conflicts. It is quite useful in terms of the information it provides to us, but the temple alone cannot tell us everything about a kingdom, and we must cross-reference it with other sources to ensure the accuracy of any analysis of the island&#39;s history.</p>
 
         <br/>
         <br/>
         <h2>The Nagarakretagama</h2>
-        <Image src={Test} alt='' height='300px' width='600px'></Image>
+        <Image src={Nagarakertagama} alt='' height='300px' width='600px'></Image>
         <p className='description'>This is the Nagarakretagama. It is an Indonesian epic poem describing the Majapahit Empire at its height. It describes the lands of the empire, its capital city, its customs, its religious festivals, and more. It is one of the most valuable primary sources on the history of Indonesia known, particularly due to its vivid descriptions of the culture and the Hindu celebrations.<br/>The poem was written during the height of the Majapahit Empire, when it stretched from Java to the Philippines, an epic poem about an empire written in its own language attests to its strength and prestige, and indicates that the people view the empire as a major power in the region. This fact is proved further by the descriptions of the army, expansions, and castle guards in the poem. It is quite a useful source for historians, mainly due to the amount of detail used to describe religious ceremonies and practices, while also providing insight into the function of the empire as a whole. It may not be the most reliable source, as we are unsure as to who wrote it, why it was written, and what ties the author had. It is quite likely that the author or authors made the empire seem more grand than it was. </p>
       <style jsx>{`
         .description {
@@ -101,7 +105,7 @@ function Initialcontact() {
       <p>In 1602, the Dutch East India Company (VoC) was founded. It was given the authority to effectively operate like a country - they were allowed to declare wars, field their own armies, and mint their own currencies. They were granted a total monopoly on the spice trade in Indonesia. While the VoC had the same goals as the Portuguese, it was better equipped, better funded, and better trained overall, which would lead to their ultimate success in controlling the islands, and holding one of the most prized European colonies. Internal corruption within the company led to its bankrupcy and eventual dissolution, with the state controlling the islands outright.</p>
       
       <h2>The First Dutch Expedition to Indonesia</h2>
-      <Image src='/../public/images/fleet.png' alt='' height='300px' width='600px'></Image>
+      <Image src={Fleet} alt='' height='300px' width='600px'></Image>
       <p className='description'>This is an image depicting the first Dutch expedition to Indonesia. This fleet ended up losing half its crew, killed a prince on the island of Java, but ended up returning with spices. This inspired the Dutch and led to the formation of the VoC. This source shows the ships entering or leaving either Indonesia or the Netherlands, the source does not say, but there is what looks like cannon fire coming out of some of the ships, while there are towers in the background (which could show either civilisation, as both were advanced in their regions).<br/>The advanced societies of Europe left behind a paper trail for all their activities so that they could be recorded for future reference. This led to the creation of journals, documents, and pictures such as this. The Dutch would have been quite advanced to be recording their activities. The image could have just as likely been a propaganda piece to try and sway public opinion on the potential colonisation of Indonesia - by making the Dutch appear mighty and powerful, the number of casualties would likely be low and the outcome beneficial supposedly beneficial to all Dutch citizens.</p>
       
       <style jsx>{`
@@ -120,11 +124,11 @@ function Postcontact() {
 
 
       <h2>Picture of Batavia (now Jakarta)</h2>
-      <Image src='/../public/images/map.jpg' alt='' height='300px' width='600px'></Image>
+      <Image src={Map} alt='' height='300px' width='600px'></Image>
       <p className='description'>This is a Dutch picture of Batavia (now Jakarta). Batavia was the colonial capital of the VoC, and was their main base of operations on the islands. In the picture, many ships can be seen entering the various ports and canals of the city. The powers of Europe left behind paper trails for them to follow and hold things to account, and this is one example of this. The picture was likely made for encyclopaedias, map pictures, books, messages, and the like. A map of a city is not one that many people would try to forge, as errors in the map could have consequences for the parties involved. The picture is likely an accurate depiction of the city of Batavia, and shows us an overview of the layout of the city and how it was organised, as well as how the landscape was transformed around the city. The large number of ships in the harbour indicates that Batavia was a city that focused on trade, if not outright relied on it completely.</p>
       
       <h2>The VoC Duit</h2>
-      <Image src='/../public/images/coin.webp' alt='' height='300px' width='600px'></Image>
+      <Image src={Coin} alt='' height='300px' width='600px'></Image>
       <p className='description'>This is a VoC Duit. This was one of the coins minted by the VoC for its use in its trading posts (later restricted to just Indonesia). 20 Duits would make one Guilder. While the coin doesn&#39;t tell us much, it symbolises the strength of the VoC. It would be unimaginable to us today if a company went to war with a sovereign state, yet the VoC - being a company in which you could trade on the Dutch exchange - essentially acted like a country and had powers that would be unthinkable to give to a company today. The VoC not only had a total monopoly granted to them on the spice trade; but they could wage wars, field and pay for their own armies, put their own currency into circulation, and execute their prisoners condemned under their own judicial system. It was also this immense power that led to corruption and bankruptcy, which would lead to the eventual collapse of the company and Indonesia being ruled outright by the Dutch State. The source is quite simple, and while it doesn&#39;t offer much as to how the company was run or what was purchased, it stills tells us much about the sheer strength and power of a single company, and the powers entrusted to it by the state.</p>
 
       <style jsx>{`
