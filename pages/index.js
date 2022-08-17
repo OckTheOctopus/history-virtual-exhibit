@@ -5,7 +5,7 @@ import Page from '../components/container';
 import React, {useState} from 'react';
 import { render } from 'react-dom';
 import Nagarakertagama from '../public/images/Nagarakertagama.jpg';
-import Coin from '../public/images/coin.wedbp';
+import Coin from '../public/images/coin.webp';
 import Fleet from '../public/images/fleet.png';
 import Map from '../public/images/map.jpg';
 import Precontact1 from '../public/images/precontact1.jpg';
